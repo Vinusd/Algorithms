@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dijkstra Visualization</title>
+<style>
+    /* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    margin: 20px auto;
+    width: max-content;
+  }
+   /* #grid {
+  display: grid;
+  margin: 20px auto;
+  border: 2 px solid #444;
+  overflow: fit-content;
+} */
+
+  .node {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px;
+    user-select: none;
+    font-family: monospace;
+  }
+
+  /* .node {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px; 
+} */
+
+  .node.wall {
+  background-color: #4B4E6D; /* Slate Blue */
+  color: white;
+}
+
+.node.start {
+  background: linear-gradient(45deg, #1abc9c, #16a085); /* Teal Gradient */
+  color: white;
+  font-weight: bold;
+}
+
+.node.end {
+  background: linear-gradient(45deg, #e74c3c, #c0392b); /* Red Gradient */
+  color: white;
+  font-weight: bold;
+}
+
+.node.visited {
+  background: linear-gradient(45deg, #f39c12, #d35400); /* Orange Gradient */
+  color: white;
+}
+
+.node.path {
+  background: linear-gradient(45deg, #8e44ad, #9b59b6); /* Purple Gradient */
+  color: white;
+  font-weight: bold;
+}
+
+.node:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Dijkstra Algorithm Visualization</h2>
+<div id="grid"></div>
+<div id="popup" style="display:none; background-color: #e74c3c; color: white; padding: 10px; margin: 10px; border-radius: 5px;">
+  No path to end node!
+</div>
+<script src="DijkstrasAlgo.js"></script>
+
+</body>
+</html>
